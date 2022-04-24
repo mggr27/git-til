@@ -76,7 +76,7 @@ public class Loop {
 		
 		//숫자1부터 총4개의 홀수들을 출력하시오
 		
-		/*시도
+		/*my
 		num=1;
 		odd=1;
 		while(num<5) {			
@@ -113,7 +113,7 @@ public class Loop {
 //		current = bb+b; //현재수 3
 //		System.out.println(current); //3
 		
-		/* 내가시도한
+		/* my
 		int bb=1;
 		int b=0;
 		for(int i=0; i<9; i++) {			
