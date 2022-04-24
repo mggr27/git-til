@@ -148,11 +148,7 @@ public class Loop {
 					break;
 				}
 			}			
-		}
-				
-		
-		
-		
+		}		
 		
 		
 	
