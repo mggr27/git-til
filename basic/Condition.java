@@ -143,22 +143,8 @@ public class Condition{
             System.out.println("이겼습니다"); 
         }else{
             System.out.println("졌습니다");
-        }
-
-        
-        /*영진쓰
-        System.out.print("가위-0, 바위-1, 보-2를 입력하세요");
-        int user = sc.nextInt();
-        int computer;
-        computer=0;
-        if(user==0){
-            System.out.println("비겼습니다");
-        }else if(user==2){
-            System.out.println("졌습니다");
-        }else{
-            System.out.println("이겼습니다.");
-        }
-        */
+        }      
+       
         
 
     }
