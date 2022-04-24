@@ -140,9 +140,9 @@ public class Loop {
 		
 		int[] lotto = new int[6];
 		for(int cnt=0; cnt<lotto.length; cnt++) {
-			lotto[cnt] = (int)(Math.random()*45)+1;
+			lotto[cnt] = (int)(Math.random()*45)+1; //5,3,5 출력예시
 //			System.out.println(rand);
-			for(int index=0; index<cnt; index++) {
+			for(int index=0; index<cnt; index++) { //index가 2에서 0되는게 헷갈렸다..
 				if(lotto[index] == lotto[cnt]) {
 					cnt--;
 					break;
