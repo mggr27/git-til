@@ -30,9 +30,9 @@ public class Loop {
 //		
 //		num=5;
 //		System.out.println(num);
+		
 		num=1;
 		while(num<=5) {
-//			num++;
 			System.out.println(num);
 			num++;
 		}
