@@ -1,10 +1,11 @@
 public class Condition{
     public static void main(String[] args){
         java.util.Scanner sc = new java.util.Scanner(System.in);
-        System.out.print("입력하세요:");
+        
+        /*
+        System.out.print("점수를 입력하세요:");
 
-        //int score = 93;
-/*
+        int score = 93;
         int score = sc.nextInt();
         if( score >= 60 ){
             System.out.println("합격");
@@ -12,16 +13,17 @@ public class Condition{
                 System.out.println("1등급");
             }else if( score  >= 70){
                 System.out.println("2등급");
-            }else{
+            }else{ //if(score >= 60)
                 System.out.println("3등급");
             }
         }else{
             System.out.println("불합격");
         }
-*/
-        /*내가시도한코드
+        */
+        
+        /*my
         int year = 2022;
-        int birthYear = 2021;
+        int birthYear = sc.nextInt();
         int age = year - birthYear;
         //7세 미만은 영유아, 8~13세까지 어린이,
         //14~19세까지 청소년, 20세이상은 성인
@@ -37,13 +39,21 @@ public class Condition{
             System.out.println("성인");
         }       
         */ 
-/*강사님 코드
+        
+        /*강사님 코드
         if(age>=20){
         }else if(age >=14){
         }else if(age >=8){
         }else{
         }
-*/
+        
+        if(age < 7){               System.out.println("영유아");        
+        }else if(age<=13){      System.out.println("어린이");
+        }else if(age <= 19){    System.out.println("청소년");
+        }else{                       System.out.println("성인");
+        }
+        */
+        
         //출생년도에 해당하는 12지를 출력하시오.
         //2022년 출생자는 호랑이, 2021년-소, 2020년-쥐
         //년도를 12로 나눈 나머지가 0이면 원숭이, 1이면 닭, 2이면 개, 3이면 돼지,
@@ -78,7 +88,7 @@ public class Condition{
             System.out.println("양");
         }
          
-        /* 시도한것
+        /* my
         int yr = sc.nextInt();
         int n = yr%12;
         switch(n) {
@@ -111,19 +121,50 @@ public class Condition{
         }
         */
         
+        if(birthYear%12 == 0){
+           System.out.println("원숭이띠");
+        }else if(birthYear%12 == 1){
+           System.out.println("닭띠");
+        }
+        
+        int ganzi= birthYear%12;
+        /*if(ganzi == 0){
+        }else if(ganzi == 1){
+        }*/
+        /*switch(ganzi){   //byte, short, char, int가능(long, float, double불가능), String가능
+        case 0:
+           System.out.println("원숭이띠");
+        case 1:
+           System.out.println("닭띠");
+        case 2:
+           System.out.println("개");
+        case 3:
+           System.out.println("돼지");
+        case 4:
+           System.out.println("쥐");
+        case 5:
+           System.out.println("소");
+        case 6:
+           System.out.println("호랑이");
+           break;
+        default:
+           System.out.println("그외의 동물");
+        }
+        */
+        
         /*
         가위바위보게임: 
         컴퓨터가 가위를 내고 사용자가 바위를 낸 경우 "이겼습니다"를 출력
-                                                 보
-                                                 가위
+                                      보          "졌습니다"
+                                     가위         "비겼습니다"
         0: 가위, 1: 바위, 2: 보
         */
         char c1 = 9996;
         int computer;
         //computer = 0;
         computer = (int)(Math.random()*3); //Math.random()의 반환값이 0.0<=r<1.0
-                                                       //Math.random()*3              0.0<=r<3.0
-                                                       //(int)                               0<=r<3
+                                                       //Math.random()*3          0.0<=r<3.0
+                                                       //(int)                    0<=r<3
         int user;
         System.out.println("가위-0, 바위-1,보-2를 입력하세요:");
         user = sc.nextInt();
