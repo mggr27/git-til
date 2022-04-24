@@ -1,7 +1,7 @@
 public class Operator{
     public static void main(String[] args){
         
-        //»ê¼ú¿¬»êÀÚ
+        //ì‚°ìˆ ì—°ì‚°ì
         int a,b,c;
         a=10; b=3;
         c= a+b;
@@ -11,7 +11,7 @@ public class Operator{
 
         short s1,s2,s3;
         s1=10; s2=3;
-        s3 = (short)(s1+s2); //¿¬»ê½Ã s2°¡ intÀÚµ¿º¯È¯µÊ
+        s3 = (short)(s1+s2); //ì—°ì‚°ì‹œ s2ê°€ intìë™ë³€í™˜ë¨
 
         float f;
         a=10;
@@ -28,21 +28,21 @@ public class Operator{
         a+=10;
         System.out.println(a);
 
-        //ºñ±³¿¬»êÀÚ
+        //ë¹„êµì—°ì‚°ì
         a=10;
         System.out.println(a%2==0);
         b=3;
         System.out.println(b%2!=1);
         System.out.println(a>b);
 
-        //³í¸®¿¬»êÀÚ
+        //ë…¼ë¦¬ì—°ì‚°ì
         System.out.println(true&&true);
         System.out.println(true&  true);
         
-        //ºñÆ®¿¬»êÀÚ
+        //ë¹„íŠ¸ì—°ì‚°ì
         System.out.println(0&1); 
 
-        //´ÜÇ×¿¬»êÀÚ
+        //ë‹¨í•­ì—°ì‚°ì
         a=10;
         a++;
         System.out.println(a); //11
@@ -64,12 +64,12 @@ public class Operator{
         byte b1;
         b1=127;
         b1++;
-        //b1=128; //ÄÄÆÄÀÏ¿À·ù
+        //b1=128; //ì»´íŒŒì¼ì˜¤ë¥˜
         System.out.println(b1);
 
-        //»ïÇ×¿¬»êÀÚ
+        //ì‚¼í•­ì—°ì‚°ì
         a=10;
-        System.out.println(a%2==0?"Â¦¼ö":"È¦¼ö");
+        System.out.println(a%2==0?"ì§ìˆ˜":"í™€ìˆ˜");
 
         
 
