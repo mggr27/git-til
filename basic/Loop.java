@@ -134,13 +134,13 @@ public class Loop {
 		
 		System.out.println("중복되지 않는 로또숫자[1~45]를 6개 출력하기");
 		for(int cnt=0; cnt<6; cnt++){
-			int rand = (int)(Math.random()*45)+1; //0.0<r<1.0를 1<=r<46로 바꾸기
+			int rand = (int)(Math.random()*45)+1; //0.0<=r<1.0를 1<=r<46로 바꾸기
 			System.out.println(rand);
 		}
 		
 		int[] lotto = new int[6];
 		for(int cnt=0; cnt<lotto.length; cnt++) {
-			lotto[cnt] = (int)(Math.random()*45)+1; //0.0<= r <1를 1<= r <46로 바꾸기
+			lotto[cnt] = (int)(Math.random()*45)+1;
 //			System.out.println(rand);
 			for(int index=0; index<cnt; index++) {
 				if(lotto[index] == lotto[cnt]) {
