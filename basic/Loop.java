@@ -3,10 +3,7 @@ public class Loop {
 
 	/**
 	 * @param args
-	 */
-	/**
-	 * @param args
-	 */
+	 */	
 	public static void main(String[] args) {
 		int score1 = 10;
 		int score2 = 20;
@@ -30,7 +27,12 @@ public class Loop {
 //		
 //		num=5;
 //		System.out.println(num);
-		
+				
+//		num=0;
+//		while(num<5){
+//			num++;
+//			System.out.println(num);
+//		}
 		num=1;
 		while(num<=5) {
 			System.out.println(num);
@@ -54,7 +56,7 @@ public class Loop {
 //		sum+=num;
 		
 //		num=0;
-//		while(num<100) {
+//		while(num<100) { //1~100까지의 합:5050
 //			num++;
 //			sum+=num;			
 //		}
@@ -73,14 +75,16 @@ public class Loop {
 //		System.out.println(num);
 		
 		//숫자1부터 총4개의 홀수들을 출력하시오
-//		num=1;
-//		odd=1;
-//		while(num<5) {
-//			
-//			odd%2!=0
-//		}
 		
-//		int cnt=0;
+		/*시도
+		num=1;
+		odd=1;
+		while(num<5) {			
+			odd%2!=0
+		}
+		*/
+		
+//		int cnt=0; //출력횟수
 //		num=1;
 //		while(cnt<4) {
 //			System.out.println(num);
@@ -88,13 +92,7 @@ public class Loop {
 //			cnt++;
 //		}
 		
-//		int i=0;
-//		for( ;i<5; ) {
-//			i++;
-//			System.out.println(i);
-//		}
-		
-		//피보나치 수열: 1,1,2,3,5,8,13,21,34
+		//피보나치 수열 9개 출력: 1,1,2,3,5,8,13,21,34
 //		int bb=1; //이전이전수 1
 //		int b=0; //이전수 0
 //		int current = bb+b; //현재수 1		
@@ -135,6 +133,11 @@ public class Loop {
 		}
 		
 		System.out.println("중복되지 않는 로또숫자[1~45]를 6개 출력하기");
+		for(int cnt=0; cnt<6; cnt++){
+			int rand = (int)(Math.random()*45)+1; //0.0<r<1.0를 1<=r<46로 바꾸기
+			System.out.println(rand);
+		}
+		
 		int[] lotto = new int[6];
 		for(int cnt=0; cnt<lotto.length; cnt++) {
 			lotto[cnt] = (int)(Math.random()*45)+1; //0.0<= r <1를 1<= r <46로 바꾸기
@@ -146,9 +149,7 @@ public class Loop {
 				}
 			}			
 		}
-		for(int i=0; i<lotto.length; i++) {
-			System.out.println(lotto[i]);			
-		}		
+				
 		
 		
 		
