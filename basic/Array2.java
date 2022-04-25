@@ -144,35 +144,23 @@ public class Array2 {
 		
 	        //과목별 평균을 계산하시오
 		/*
-		
-		int totalScore = 0;
-		for(int i=0; i<scores[i].length; i++) { // 1차원 배열 (길이 : 3)
-			for (int j=0; j<scores.length; j++) { // 2차원 배열 (길이 : 5)
-				totalScore += scores[j][i];
-			}
-			System.out.println(totalScore);
-		}
+		국어과목의 평균은 6.8
+		영어과목의 평균은 5.8
+		수학과목의 평균은 5.2
 		*/
-		for(int col=0; col<scores[0].length;col++) {
-			totalScore+=scores[0][col];
-		}
-		float avg = (float)totalScore /scores[0].length;
-		System.out.println(totalScore+" "+avg);
-//		//1번학생의 총점은   이고 평균은 이다
-//		//2번학생의 총점은   이고 평균은 이다
-//		//3번학생의 총점은   이고 평균은 이다
-//		//4번학생의 총점은   이고 평균은 이다
-//		//5번학생의 총점은   이고 평균은 이다
-//		
-//		//국어과목의 평균은 
-//		//영어과목의 평균은
-//		//수학과목의 평균은
-		int subject = 0;
-		for(int row=0; row<scores.length; row++) {
-			subject += scores[row][0];
-		}
-		System.out.println((float)subject/scores.length);
+		String []subjects = {"국어","영어","수학"};
+		int[] subjectTotalScore = new int[subjectCnt];
 		
+		for(int row=0; row<studentCnt; row++) { // 1차원 배열 (길이 : 3)
+			for (int col=0; col<subjectCnt; col++) { // 2차원 배열 (길이 : 5)
+				subjectTotalScores[col] += scores[row][col];
+			}
+		}
+		for(int col=0; col<subjectCnt; col++) {
+			float subjectAvg = (float)subjectTotalScores[col]/studentCnt;
+			System.out.println(subjects[col]+"과목의 평균은"+subjectAvg);
+		}
+				
 		int[][] arr6 = {{1,2,3,4},{5,6,7,8},{9,10,11,12},{13,14,15,16}};
 		int[][] arr7 = new int[4][4];
 		int num=12;
