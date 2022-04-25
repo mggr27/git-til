@@ -97,9 +97,8 @@ public class Array2 {
 		
 		int num5 = 1;
 		for(int row=0; row<arr5.length; row++) {
-			arr5[row] = new int[row+1]; //열 생성
-			//값대입
-			for(int col=0; col<arr5[row].length; col++, num5++) {
+			arr5[row] = new int[row+1]; //열 생성			
+			for(int col=0; col<arr5[row].length; col++, num5++) { //값대입
 				arr5[row][col] = num5;
 			}
 		}
@@ -135,7 +134,7 @@ public class Array2 {
 				
 		for(int row=0; row<studentCnt; row++) {
 			int studentTotalScore = 0;
-			for(int col=0; col<studentCnt; col++) {
+			for(int col=0; col<sbjectCnt; col++) {
 				studentTotalScore += scores[row][col];
 			}
 			float studentAvg = (float)studentTotalScore / subjectCnt;
@@ -171,8 +170,13 @@ public class Array2 {
 //			}
 //		}
 		/*
-		int[][] ar = {{1,2,3,4},{5,6,7,8},{9,10,11,12},{13,14,15,16}};
+		int[][] ar = {{13,9,5,1},{14,10,6,2},{15,11,7,3},{16,12,8,4}};
 		int[][] ar1 = new int[4][4];
+		
+		a7[0][3] = a6[0][0];
+		a7[1][3] = a6[0][1];
+		a7[2][3] = a6[0][2];
+		a7[3][3] = a6[0][3];
 		
 		for(int i =0; i<arr.length;i++) {
 			for(int j=3; j>-1; j--) {
