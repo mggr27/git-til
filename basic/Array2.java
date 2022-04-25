@@ -20,8 +20,7 @@ public class Array2 {
 		
 		for(int i=0; i<arr.length; i++) {
 			for(int j=0; j<arr[i].length; j++) {
-				arr[i][j] = j + 1;
-				System.out.println("arr["+i+"]["+j+"]:"+arr[i][j]);
+				arr[i][j] = j + 1;				
 			}
 		}
 		for(int i=0; i<arr.length; i++) {
@@ -30,43 +29,61 @@ public class Array2 {
 			}
 			System.out.println();
 		}
-
 		System.out.println("---");
+		
 		//1 2 3 4
 		//5 6 7 8
 		//9 10 11 12
-		
-		int n=0;
-		for(int i=0; i<arr.length; i++) { //0
-			for(int j=0; j<arr[i].length; j++) { //1
-				n++;
-				arr[i][j] =n;
-				System.out.print(arr[i][j]+" ");
+		int arr2[][] = new int[3][4];
+		int num2=1;
+		for(int i=0; i<arr2.length; i++) {
+			for(int j=0; j<arr2[0].length; j++,num2++) {
+				arr2[i][j] =num2;
+			}
+		}
+		for(int i=0; i<arr2.length; i++){
+			for(int j=0; j<arr2[0].length; j++){
+				System.out.print(arr2[i][j]+" ");
 			}
 			System.out.println();
 		}
+		System.out.println("---");
+		
 		//1 4 7 10
 		//2 5 8 11
 		//3 6 9 12
-		int n1=0;
-		for(int i=0; i<arr[0].length; i++) {
-			for(int j=0; j<arr.length; j++) {
-				n1++;
-				arr[j][i]=n1;				
+		int arr3[][] = new int[3][4];
+		int num3=1;
+		for(int col=0; col<arr3[0].length; col++) {
+			for(int row=0; row<arr3.length; row++, num3++) {
+				arr3[row][col]=num3;				
 			}
 		}
-		for(int i=0; i<arr.length; i++) {
-			for(int j=0; j<arr[0].length; j++) {
-				System.out.print(arr[i][j]+" ");
+		for(int row=0; row<arr3.length; row++) {
+			for(int col=0; col<arr3[0].length; col++) {
+				System.out.print(arr3[row][col]+" ");
 			}
 			System.out.println();
 		}
-	
+		System.out.println("---");	
 			
 		//A B C D
 		//E F G H
 		//I J K L
-		
+		char arr4[][] = new char[3][4];
+		char alpha = 'A';
+		for(int i=0; i<arr4.length; i++){
+			for(int j=0; j<arr4[0].length; j++,alpha++){
+				arr4[i][j] = alpha;
+			}
+		}
+		for(int i=0; i<arr4.length; i++){
+			for(int j=0; j<arr4[0].length; j++){
+				System.out.print(arr4[i][j]+" ");
+			}
+			System.out.println();
+		}
+		System.out.println("---");
 		//1
 		//2 3
 		//4 5 6
@@ -77,6 +94,7 @@ public class Array2 {
 //		arr5[1] = new int[2];
 //		arr5[2] = new int[3];
 //		arr5[3] = new int[4];
+		
 		int num5 = 1;
 		for(int row=0; row<arr5.length; row++) {
 			arr5[row] = new int[row+1]; //열 생성
@@ -97,26 +115,36 @@ public class Array2 {
 //		scores[0][1] = 8;
 //		scores[0][2] = 5;
 		int[][] scores = { {9, 8, 5},
-						   {10, 3, 5},
-				           {7, 10, 8},
-				           {3, 2, 1},
-				           {5, 6, 7}
-				         }; //배열초기화
+				  {10, 3, 5},
+				  {7, 10, 8},
+				   {3, 2, 1},
+				   {5, 6, 7}
+				 }; //배열초기화
 		//각학생의 총점과 평균을 계산하시오
 		//int totalScore = scores[0][0]+scores[0][1]+scores[0][2];
-		int totalScore = 0;
+		//int totalScore = 0;
 		/*
-		for(int row=0; row < scores.length; row++) {
-			for(int col=0; col < scores[0].length; col++) {
-				totalScore = totalScore + scores[row][col];
-			}
-			float avg = (float)totalScore / scores[row].length;
-			System.out.println(row+"학생의 총점은 "+totalScore+"평균은 "+avg+"이다");
-			totalScore = 0 ;
-		}
+		1번 학생의 총점은 22이고 평균은 7.3333335이다
+		2번 학생의 총점은 18이고 평균은 6.0이다
+		3번 학생의 총점은 25이고 평균은 8.333333이다
+		4번 학생의 총점은  6이고 평균은 2.0이다
+		5번 학생의 총점은 18이고 평균은 6.0이다
 		*/
-
+		int studentCnt = scores.length;
+		int subjectCnt = scores[0].length;		
+				
+		for(int row=0; row<studentCnt; row++) {
+			int studentTotalScore = 0;
+			for(int col=0; col<studentCnt; col++) {
+				studentTotalScore += scores[row][col];
+			}
+			float studentAvg = (float)studentTotalScore / subjectCnt;
+			System.out.println(row+1+"번 학생의 총점은"+studentTotalScore+"이고 평균은"+studentAvg+"이다");
+		}
+		
+	        //과목별 평균을 계산하시오
 		/*
+		
 		int totalScore = 0;
 		for(int i=0; i<scores[i].length; i++) { // 1차원 배열 (길이 : 3)
 			for (int j=0; j<scores.length; j++) { // 2차원 배열 (길이 : 5)
