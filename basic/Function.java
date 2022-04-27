@@ -1,6 +1,8 @@
 import java.util.Calendar;
 import java.util.Map;
+
 public class Function {
+	
 //	public static void method6(zodiac함수) {		
 //	} 함수를 인자로 전달하는것은 불가능
 	public static void method5(Map map) {
@@ -16,12 +18,12 @@ public class Function {
 		Calendar c = Calendar.getInstance();
 		switch(c.get(Calendar.AM_PM)){
 			case Calendar.AM:
-				return "오전";
+				return "오전"; //값반환+함수빠져나감
 			default:
 			    return "오후";
 		}		
 	}
-	public static void method1(int i) {
+	public static void method1(int i) { //리턴값이 없는 함수
 		System.out.println(i%2==0?"짝수":"홀수");
 	}
 	public static String zodiac(int year) {
@@ -43,7 +45,7 @@ public class Function {
 		
 		java.util.Scanner sc = new java.util.Scanner(System.in);
 		System.out.println("출생년도를 입력하세요:");
-		int year = sc.nextInt();
+		int year = sc.nextInt(); //zodiac함수와 전혀다른 year변수
 		String result;
 		result = zodiac(year);
 		System.out.println(result);
