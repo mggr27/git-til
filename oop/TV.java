@@ -6,9 +6,9 @@
  */
 
 public class TV {
-	private boolean power; //멤버변수
+	private boolean power; //멤버변수 
 	private int channel; //member field
-	private int volume; //인스턴스변수
+	private int volume; //인스턴스변수 heap 영역에 저장됨
 	public void powerOn() {
 		power = true;
 	}
