@@ -2,8 +2,8 @@
 
 public class WatchTV {
 
-	public static void main(String[] args) {
-		TV tv;
+	public static void main(String[] args) { //실행용도의 클래스
+		TV tv; //지역변수 tv 스택영역에 저장됨 
 		tv = new TV();
 //		tv.power = true;
 		tv.powerOn(); //전원을 켠다
