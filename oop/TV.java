@@ -6,9 +6,12 @@
  */
 
 public class TV {
-	boolean power;
-	int channel;
-	int volume;
+	private boolean power;
+	private int channel;
+	private int volume;
+	public void powerOn() {
+		power = true;
+	}
 	public boolean isPower() {		
 		return this.power; //현재사용중인 TV객체의 power값
 	}
@@ -17,6 +20,10 @@ public class TV {
 	 * @param channel 설정할 채널값
 	 */
 	public void setChannel(int channel) {
+		if(channel<0) {
+			System.out.println("잘못된 채널입니다");
+			return;
+		}
 		this.channel = channel;		
 	}
 	/**
@@ -42,4 +49,3 @@ public class TV {
 	
 
 }
-
