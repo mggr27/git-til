@@ -6,7 +6,7 @@ public class WatchTV {
 		TV tv; //지역변수 tv 스택영역에 저장됨 
 		tv = new TV();
 //		tv.power = true;
-		tv.powerOn(); //전원을 켠다
+//		tv.powerOn(); //전원을 켠다
 		boolean power = tv.isPower(); //전원이 켜진경우 true를 반환, 꺼진경우 false를 반환
 		if(power) { //if(power == true)와 같은 의미
 			System.out.println("전원이 켜졌습니다");
