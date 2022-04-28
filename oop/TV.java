@@ -44,7 +44,7 @@ public class TV {
 	 * @return 음량값
 	 */
 	public int getVolume() {
-		return volume;
-		
+		return volume;		
 	}
+	
 }
