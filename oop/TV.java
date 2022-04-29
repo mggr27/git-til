@@ -1,6 +1,6 @@
 /**
  * TV객체가 될 클래스입니다
- * @author 오문정
+ * @author 
  * @version 1.0
  *
  */
