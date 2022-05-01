@@ -68,6 +68,7 @@ public class ProductManager {
 		repository.insert(p1);
 		repository.insert(new Product("F0001","스콘",1500,new Date()));
 	}
+	
 	/*
 	ProductRepository(){
 		this.products=new Product[5];
@@ -88,6 +89,6 @@ public class ProductManager {
 		this(prodNo,prodName,prodPrice);
 		this.prodMfd=prodMfd;
 	}
-
 	*/
+	
 }
