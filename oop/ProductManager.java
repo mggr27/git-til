@@ -29,7 +29,7 @@ class Product{
 		this.prodName = prodName;
 		this.prodPrice = prodPrice;
 		this.prodMfd = prodMfd;
-	}
+	}	
 }
 /**
  * 상품을 저장소에 추가, 수정, 조회, 삭제
@@ -67,28 +67,5 @@ public class ProductManager {
 		Product p1 = new Product("D0001","아메리카노",1000,new Date());
 		repository.insert(p1);
 		repository.insert(new Product("F0001","스콘",1500,new Date()));
-	}
-	
-	/*
-	ProductRepository(){
-		this.products=new Product[5];
-	}
-	ProductRepository(int i){
-		this.products=new Product[i];
-	}
-	Product(String prodNo,String prodName,int prodPrice){
-		this.prodNo=prodNo;
-		this.prodName=prodName;
-		this.prodPrice=prodPrice;
-	}
-	void insert(Product product) {
-		this.products[cnt]=product;
-		this.cnt++;
-	}
-	Product(String prodNo,String prodName,int prodPrice,Date prodMfd){
-		this(prodNo,prodName,prodPrice);
-		this.prodMfd=prodMfd;
-	}
-	*/
-	
+	}	
 }
