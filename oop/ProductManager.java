@@ -33,7 +33,7 @@ class Product{
 }
 /**
  * 상품을 저장소에 추가, 수정, 조회, 삭제
- * @author KOSTA
+ * @author writer
  *
  */
 class ProductRepository{
