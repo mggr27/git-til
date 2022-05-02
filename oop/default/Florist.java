@@ -13,18 +13,19 @@
  *
  */
 import java.util.Date;
-class Product{
+
+class Flower{
 	String prodNo;
 	String prodName;
 	int prodPrice;
 	String prodInfo;
 	Date prodMfd;
-	Product(String prodNo, String prodName, int prodPrice){
+	Flower(String prodNo, String prodName, int prodPrice){
 		this.prodNo = prodNo;
 		this.prodName = prodName;
 		this.prodPrice = prodPrice;
 	}
-	Product(String prodNo, String prodName, int prodPrice, Date prodMfd){
+	Flower(String prodNo, String prodName, int prodPrice, Date prodMfd){
 		this.prodNo = prodNo;
 		this.prodName = prodName;
 		this.prodPrice = prodPrice;
@@ -36,36 +37,36 @@ class Product{
  * @author writer
  *
  */
-class ProductRepository{
-	Product[] products; //저장소 개수5
+class Garden{
+	Flower[] products; //저장소 개수5
 	int cnt; //저장소에 저장(등록)된 상품수0
-//	ProductRepository(String[] md){} //my
+//	Garden(String[] md){} //my
 	
 	/**
 	 * 저장소에 상품을 추가한다 
-	 * @param product 상품
+	 * @param flower 상품
 	 */
-	ProductRepository(){
-		this.products=new Product[5];
+	Garden(){
+		this.products=new Flower[5];
 	}
-	ProductRepository(int i){
-		this.products=new Product[i];
+	Garden(int i){
+		this.products=new Flower[i];
 	}
-	void insert(Product product) {
-		this.products[cnt]=product;
+	void insert(Flower flower) {
+		this.products[cnt]=flower;
 		this.cnt++;
 	}
 }
 
-public class ProductManager {
+public class Florist {
 
 	public static void main(String[] args) {
-		ProductRepository repository;
-		repository = new ProductRepository(); //최대5개까지 저장할 수 있는 저장소를 생성한다
-//		repository = new ProductRepository(10); //최대10개까지 저장할 수 있는 저장소를 생성한다
+		Garden repository;
+		repository = new Garden(); //최대5개까지 저장할 수 있는 저장소를 생성한다
+//		repository = new Garden(10); //최대10개까지 저장할 수 있는 저장소를 생성한다
 		
-		Product p1 = new Product("D0001","아메리카노",1000,new Date());
+		Flower p1 = new Flower("D0001","아메리카노",1000,new Date());
 		repository.insert(p1);
-		repository.insert(new Product("F0001","스콘",1500,new Date()));
+		repository.insert(new Flower("F0001","스콘",1500,new Date()));
 	}	
 }
