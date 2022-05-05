@@ -1,9 +1,10 @@
 package world.asia;
 
 public class Korea {
-	private String language = "한국어";//언어
+	public String language = "한국어";//언어
 	private String capital; //수도
-	private int population; //인구
+	int population; //인구
+	
 	public Korea() {
 		capital = "서울";
 	}
