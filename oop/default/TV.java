@@ -1,20 +1,21 @@
 /**
  * TV객체가 될 클래스입니다
- * @author 
+ * @author writer
  * @version 1.0
  *
  */
-
 public class TV {
 	private boolean power; //멤버변수 
 	private int channel; //member field
 	private int volume; //인스턴스변수 heap 영역에 저장됨
+	
 	public void powerOn() {
 		power = true;
 	}
 	public boolean isPower() {		
 		return this.power; //현재사용중인 TV객체의 power값
 	}
+	
 	/**
 	 * 채널을 설정한다
 	 * @param channel 설정할 채널값
@@ -33,6 +34,7 @@ public class TV {
 	public int getChannel() {
 		return channel;		
 	}
+	
 	/**
 	 * 음량을 1증가시킨다
 	 */
@@ -44,7 +46,7 @@ public class TV {
 	 * @return 음량값
 	 */
 	public int getVolume() {
-		return volume;		
+		return volume;
+		
 	}
-	
 }
