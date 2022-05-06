@@ -1,12 +1,12 @@
 package world.asia;
 
 public class Korea {
-	public String language = "한국어";//언어
+	private String language = "한국어";//언어
 	private String capital; //수도
-	int population; //인구
+	private int population; //인구
 	
 	public Korea() {
-		capital = "서울";
+		capital = "서울"; //생성자통해서 초기화
 	}
 	public void setPopulation(int population) {
 		if(population < 1) {
