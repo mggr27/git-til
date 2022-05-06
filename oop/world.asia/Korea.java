@@ -11,7 +11,7 @@ public class Korea {
 	public void setPopulation(int population) {
 		if(population < 1) {
 			System.out.println("인구는 1이상이어야합니다");
-			return;
+			return; // void로 선언된 메서드에서 return은 메서드를 끝낸다는뜻
 		}
 		this.population = population;
 	}
