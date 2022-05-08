@@ -2,9 +2,10 @@
 
 public class WatchTV {
 
-	public static void main(String[] args) { //실행용도의 클래스
-		TV tv; //지역변수 tv 스택영역에 저장됨 
+	public static void main(String[] args) {
+		TV tv;
 		tv = new TV();
+		
 //		tv.power = true;
 		tv.powerOn(); //전원을 켠다
 		boolean power = tv.isPower(); //전원이 켜진경우 true를 반환, 꺼진경우 false를 반환
@@ -22,6 +23,6 @@ public class WatchTV {
 		}else {
 			System.out.println("전원이 꺼졌습니다");
 		}
-		
+
 	}
 }

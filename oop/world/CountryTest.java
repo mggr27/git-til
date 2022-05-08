@@ -1,4 +1,5 @@
 package world;
+
 //import world.asia.*;
 import world.asia.Korea;
 import world.asia.Japan;
@@ -25,8 +26,7 @@ public class CountryTest {
 //		k.language = "일본어";
 //		k.capital = "평양";
 //		k.population = -1;
-		k.setPopulation(-1);
+//		k.setPopulation(-1);
 
 	}
-
 }
