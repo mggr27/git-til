@@ -19,11 +19,14 @@ class A{ //class A extends Object{로 컴파일시 바뀐다
 	/**
 	 * 현재객체의 i값과 매개변수객체의 i값이 같으면 true반환, 그 외에는 false반환
 	 */
+	@Override
 	public boolean equals(Object obj) { //A타입 obj안됨 오버라이딩규칙 타입맞춰야
-		A a = (A)obj; //다운캐스팅 자식객체가 부모타입으로 업캐스팅된 후에만 자식타입으로 다운캐스팅가능
-		              //부모객체가 자식타입으로 다운캐스팅 불가능. ClassCastException실행시 발생
-		if(this.i == a.i) {
-			return true;
+		if(obj instanceof A) {
+			A a = (A)obj; //다운캐스팅 자식객체가 부모타입으로 업캐스팅된 후에만 자식타입으로 다운캐스팅가능
+		                 //부모객체가 자식타입으로 다운캐스팅 불가능. ClassCastException실행시 발생
+			if(this.i == a.i) {
+				return true;
+			}
 		}
 		return false;
 	}
