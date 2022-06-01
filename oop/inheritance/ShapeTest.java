@@ -8,7 +8,7 @@ abstract class Shape{
 	void print() {
 		System.out.println("이것은 도형입니다");
 	}
-	void calcArea() {}
+	abstract void calcArea(); 
 }
 class Circle extends Shape{
 	private int radius;
@@ -74,7 +74,7 @@ public class ShapeTest {
 	
 	public static void main(String[] args) {
 		
-		Shape[] arr = new Shape[3];
+		Shape[] arr = new Shape[4];
 		arr[0] = new Circle(5);
 		arr[1] = new Rectangle(3,4);
 		arr[2] = new Rectangle(5);

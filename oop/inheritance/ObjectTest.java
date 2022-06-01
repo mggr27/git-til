@@ -17,9 +17,17 @@ class A{ //class A extends Object{로 컴파일시 바뀐다
 		return "멤버변수i값은 " + i + "입니다";
 	}
 	/**
-	 * 현재객체와 매개변수객체의 i값이 같으면 true반환, 그 외에는 false반환
+	 * 현재객체의 i값과 매개변수객체의 i값이 같으면 true반환, 그 외에는 false반환
 	 */
-	public boolean equals(Object obj) {
+	@Override
+	public boolean equals(Object obj) { //A타입 obj안됨 오버라이딩규칙 타입맞춰야
+		if(obj instanceof A) {
+			A a = (A)obj; //다운캐스팅 자식객체가 부모타입으로 업캐스팅된 후에만 자식타입으로 다운캐스팅가능
+		                 //부모객체가 자식타입으로 다운캐스팅 불가능. ClassCastException실행시 발생
+			if(this.i == a.i) {
+				return true;
+			}
+		}
 		return false;
 	}
 }
@@ -54,10 +62,12 @@ public class ObjectTest {
 		System.out.println(o2.hashCode()); //1829164700
 		System.out.println(o3.hashCode()); //366712642
 		
-		equalsTest(o1,o2); //false
-		equalsTest(o1,o3); //true
-		equalsTest(o1,a1); //false
-		equalsTest(a1,o1); //false
+		System.out.println("---equals재정의테스트---");
+		equalsTest(a1, a2); //false 각 객체의 인스턴스변수값이 같으면 true, 다르면 false
+		equalsTest(o1, o2); //false 각 객체가 같은메모리이면 true, 다른메모리이면 false
+		equalsTest(o1, o3); //true
+		equalsTest(o1, a1); //false 각 객체의 자료형이 다르면 false
+		equalsTest(a1, o1); //false 각 객체의 자료형이 다르면 false
 		
 //		System.out.println(o1.toString()); //java.lang.Object@15db9742 
 //		System.out.println(o2.toString()); //java.lang.Object@6d06d69c
