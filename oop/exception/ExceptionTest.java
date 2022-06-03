@@ -52,15 +52,16 @@ public class ExceptionTest {
 			System.out.println("숫자로 입력하세요. 숫자가 아니어서 1로 대신합니다");
 		} finally {
 			System.out.println("finally블럭입니다");
-			if(fis !=null) { //if 안에 try오는게 퍼포먼스가 더 빠름
-			try {
+			if(fis !=null) { //if안에 try오는게 퍼포먼스가 더빠름
+				try {
 					fis.close(); //파일자원과의 연결해제
-			} catch (IOException e) {
+				}catch (IOException e) {
 				}
 			} 
 		}
 		test(i);
 		System.out.println("끝");
+		
 		
 	}
 }
