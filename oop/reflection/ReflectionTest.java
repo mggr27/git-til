@@ -20,8 +20,8 @@ public class ReflectionTest {
 		}
 	}
 	public static void main(String[] args) throws ClassNotFoundException, InstantiationException, IllegalAccessException, IllegalArgumentException, InvocationTargetException {
-		Product p = new Product("D0001", "아메리카노", 1500); 
-		System.out.println(p.toString());
+// 		Product p = new Product("D0001", "아메리카노", 1500); 
+// 		System.out.println(p.toString());
 		
 		Scanner sc = new Scanner(System.in);
 		System.out.print("클래스이름을 입력하세요ex)java.lang.String");
