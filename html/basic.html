@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>첫번째 HTML입니다</title>
+</head>
+<body>
+오문정의 basic.html문서입니다
+<!-- 톰캣실행 옵션 
+-Dcatalina.base="D:\244\SW\apache-tomcat-9.0.63" 
+-Dcatalina.home="D:\244\SW\apache-tomcat-9.0.63" 
+-Dwtp.deploy="D:\244\SW\apache-tomcat-9.0.63\wtpwebapps" 
+--add-opens=java.base/java.lang=ALL-UNNAMED 
+--add-opens=java.base/java.io=ALL-UNNAMED 
+--add-opens=java.base/java.util=ALL-UNNAMED 
+--add-opens=java.base/java.util.concurrent=ALL-UNNAMED 
+--add-opens=java.rmi/sun.rmi.transport=ALL-UNNAMED 
+-Djava.endorsed.dirs="D:\244\SW\apache-tomcat-9.0.63\endorsed"
+
+-Dcatalina.base="D:\244\SW\apache-tomcat-9.0.63" -Dcatalina.home="D:\244\SW\apache-tomcat-9.0.63" -Dwtp.deploy="D:\244\SW\apache-tomcat-9.0.63\wtpwebapps"  -Djava.endorsed.dirs="D:\244\SW\apache-tomcat-9.0.63\endorsed"
+ -->
+ 
+ <!--http://localhost:8888/front/html/basic.html-->
+ <!-- 
+ HTML: Hyper Text Markup Language
+  -->
+<h1>오문정의 basic.html문서입니다</h1>
+<h3>HTML Headings</h3>
+
+<p style="background-color:mediumseagreen">HTML headings are titles or subtitles <br> that you want to display on a webpage.</p>
+<p style="background-color:slateblue; color:#ff6347">HTML <a href="https://www.w3schools.com/html/html_headings.asp">headings</a> are defined with the  &lt;h1&gt; to  &lt;h6&gt; tags.</p>
+
+<p>
+<a href="http://localhost:8888/front/html/profile.html">프로필</a>
+<a href="./self-introduction.html" target="_blank">상대경로 자기소개서</a> <!-- 상대경로 현재폴더./또는 생략 -->
+<a href="self-introduction.html" target="_blank">상대경로./생략자기소개서</a> <!-- 상대경로 현재폴더./또는 생략 -->
+<a href="/front/html/self-introduction.html" target="_blank">자기소개서</a> <!-- 슬래시/로 시작하면 지금배포된 front라는 웹프로젝트 하위경로 -->
+</p>
+
+<p>
+	<img src="https://movie-phinf.pstatic.net/20220504_33/165164173504831gKe_JPEG/movie_image.jpg?type=m203_290_2" 
+	alt="닥터스트레인지: 대혼돈의 멀티버스"
+	width="200" height="200"> <!-- 우클릭 이미지주소복사 -->
+	<img src="../images/movie_image.jpg" alt="닥터스트레인지: 대혼돈의 멀티버스" width="200">
+	<img src="/front/images/movie_image.jpg" alt="닥터스트레인지: 대혼돈의 멀티버스" width="50%">
+</p>
+
+<!-- <table border="1" width="500px"> -->
+<table style="border:1px solid;width:50%;">
+	<thead>
+		<tr>
+			<th style="border:1px dotted;">종류</th><th>원산지</th>
+		</tr>
+	</thead>
+	<tbody>
+		<tr>
+			<td rowspan="2" style="border:1px dotted;">녹차</td><td style="border:1px solid;">보성</td>
+		</tr>
+		<tr>
+			<td style="border:1px solid;">제주</td>
+		</tr>
+		<tr>
+			<td>우롱차</td><td>제주</td>
+		</tr>
+		<tr>
+			<td>오렌지</td><td>캘리포니아</td>
+		</tr>
+		<tr>
+			<td>키위</td><td>제주</td>
+		</tr>
+	</tbody>
+	<tfoot>
+		<tr>
+			<td colspan="2" style="border:1px dotted;">맺음말</td>
+		</tr>
+	</tfoot>
+</table>
+
+<table style="border:1px solid;width:50%;">
+	
+		<tr>
+			<th style="border:1px dotted;">종류</th><th>원산지</th>
+		</tr>
+	
+
+		<tr>
+			<td rowspan="2" style="border:1px dotted;">녹차</td><td style="border:1px solid;">보성</td>
+		</tr>
+		<tr>
+			<td style="border:1px solid;">제주</td>
+		</tr>
+		<tr>
+			<td>우롱차</td><td>제주</td>
+		</tr>
+		<tr>
+			<td>오렌지</td><td>캘리포니아</td>
+		</tr>
+		<tr>
+			<td>키위</td><td>제주</td>
+		</tr>
+	
+	
+		<tr>
+			<td colspan="2" style="border:1px dotted;">맺음말</td>
+		</tr>
+	
+</table>
+
+<p>
+
+<ol>
+  <li> 정치 </li>
+  <li> 경제 </li>
+  <li> 사회 </li>
+</ol>
+
+<ul>
+  <li> 정치 </li>
+  <li> 경제 </li>
+  <li> 사회 </li>
+</ul>
+
+
+</p>
+
+<address>Copyright 1999-2022 by Refsnes Data. All Rights Reserved.
+W3Schools is Powered by W3.CSS.</address>
+
+ 
+</body>
+</html>
