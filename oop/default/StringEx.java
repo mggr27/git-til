@@ -90,11 +90,11 @@ public class StringEx {
 //		hostNameNPath.indexOf(":"); //문자에 해당하는 인덱스를 반환
 //		System.out.println(hostNameNPath.indexOf("/", 5+3)); 
 		int beginIndex = hostNameNPath.indexOf(":")+3; //5+3
-		int endIndex = hostNameNPath.indexOf("/",beginIndex); //22, 해당문자가 존재하지않는다는뜻의-1
-		if(endIndex !=-1) {
-		hostName = hostNameNPath.substring(beginIndex,endIndex);
-		//hostNameNPath.substring(endIndex+1, hostNameNPath.length());
-		path = hostNameNPath.substring(endIndex+1);
+		int endIndex = hostNameNPath.indexOf("/",beginIndex); //22, 찾을 슬래시/가 없으면 StringIndexOutOfBoundsException
+		if(endIndex !=-1) { //해당문자가 존재하지않는다는뜻의-1 If no such value of k exists, then -1 is returned.
+			hostName = hostNameNPath.substring(beginIndex,endIndex);
+			//hostNameNPath.substring(endIndex+1, hostNameNPath.length());
+			path = hostNameNPath.substring(endIndex+1);
 		}else {
 			hostName = hostNameNPath;
 			path = "";
