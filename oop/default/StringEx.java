@@ -76,11 +76,11 @@ public class StringEx {
 		String queryString; //str의 querystring : id=c_202205031110_00000070&mode=LSD&mid=shm&sid1=105&oid=018&aid=0005206604
 		
 		String regex = "\\?"; //정규표현식이 와야하는자리 \\붙이고 \\?이렇게 써야 일반문자열?, 그냥쓰면 정규표현식?임
-		int limit = 2;
-		String[] arr = str.split(regex, limit); // split메서드 PatternSyntaxException
+		int limit = 2; // split메서드 PatternSyntaxException
+		String[] arr = str.split(regex, limit); //배열의 크기를 2개로 
 		System.out.println("arr[0]:" + arr[0]);
 		if(arr.length>=2) {
-			System.out.println("arr[1]:"+arr[1]);
+			System.out.println("arr[1]:"+arr[1]); //ArrayIndexOutOfBoundsException
 		}
 		System.out.println("arr[1]:" + arr[1]);
 		
