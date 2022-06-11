@@ -42,8 +42,8 @@ public class WrapperTest {
 		
 //		int j = arr[2]; //참조형->기본형 형변환 안됨
 		int j = (Integer)arr[2]; //AutoUnBoxing : 컴파일러에의해 
-		//Integer inte2 = (Integer)arr[2];
-		//int j = inte2.intValue();로 바뀜
+		                        //Integer inte2 = (Integer)arr[2];
+		                       //int j = inte2.intValue();로 바뀜
 		int k = (int)arr[2]; //권장안함
 
 	}
