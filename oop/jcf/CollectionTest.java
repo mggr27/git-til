@@ -6,6 +6,13 @@ import java.util.HashMap;
 import java.util.HashSet;
 import java.util.Map;
 
+class A{
+	int i;
+	A(int i){
+		this.i = i;
+	}
+}
+
 public class CollectionTest {
 	public static void test(Collection c) {
 		c.add(new String("one")); //add()의 매개변수타입은 Object이다. String이 Object로 업캐스팅
@@ -13,6 +20,8 @@ public class CollectionTest {
 		c.add(3); //AutoBoxing : 컴파일시에 c.add(new Integer(3));로 바뀜 Integer가 Object로 업캐스팅
 		c.add(2); //AutoBoxing
 //		c.add(new A(5));
+		c.add(new A(5));
+		
 		System.out.println("자료수 : "+ c.size());
 		System.out.println(c); // c.toString()자동호출됨
 	}
@@ -22,7 +31,7 @@ public class CollectionTest {
 		m.put(3, "third");
 		m.put(2, "fourth");
 		System.out.println("자료수:"+m.size());
-		System.out.println(m); //m.toString()자동호출됨
+		System.out.println(m); //m.toString()자동호출됨 // {2=fourth, 3=third, one=first}
 	}
 	public static void main(String[] args) {
 //		List list = new ArrayList(); //List는 인터페이스 하위클래스인 ArrayList는 일반클래스
