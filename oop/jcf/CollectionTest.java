@@ -5,11 +5,27 @@ import java.util.Collection;
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.Map;
+import java.util.Objects;
 
 class A{
 	int i;
 	A(int i){
 		this.i = i;
+	}
+	@Override //source - generate hashCode() and equals()
+	public int hashCode() {
+		return Objects.hash(i);
+	}
+	@Override
+	public boolean equals(Object obj) {
+		if (this == obj)
+			return true;
+		if (obj == null)
+			return false;
+		if (getClass() != obj.getClass())
+			return false;
+		A other = (A) obj;
+		return i == other.i;
 	}
 }
 
