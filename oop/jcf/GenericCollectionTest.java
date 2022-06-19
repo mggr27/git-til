@@ -4,7 +4,7 @@ import java.util.ArrayList;
 import java.util.List;
 /**
  * Element Generic
- * @author KOSTA
+ * @author 
  *
  */
 public class GenericCollectionTest {
