@@ -9,20 +9,20 @@
  *           042022
  *           2022/04/02
  *           Date   
- * @author writer
+ * @author kosta
  *
  */
 import java.util.Date;
 
 import com.my.dto.Product;
 import com.my.exception.AddException;
-import com.my.repository.ProductRepository;
+import com.my.repository.ProductArrayRepository;
 
-public class ProductManager {
+public class ProductArrayManager {
 
 	public static void main(String[] args) {
-		ProductRepository repository;
-		repository = new ProductRepository(); //최대5개까지 저장할 수 있는 저장소를 생성한다
+		ProductArrayRepository repository;
+		repository = new ProductArrayRepository(); //최대5개까지 저장할 수 있는 저장소를 생성한다
 //		repository = new ProductRepository(10); //최대10개까지 저장할 수 있는 저장소를 생성한다
 		
 //		Product p1 = new Product("D0001","아메리카노",1000,new Date());
@@ -60,20 +60,6 @@ public class ProductManager {
 			//상품번호: D0005, 상품명:상품5, 가격:1500, 상세정보:null, 제조일자:~~가 출력됨
 		}
 		
-//		A a = new A();
-//		B b = new B();
-//		C c = new C();
-//		try {
-//			a.~~();
-//			b.~~();
-//			c.~~();
-//		}catch(AException ae) {
-//			~~~
-//		}catch(BException be) {
-//			~~~
-//		}catch(CException ce) {
-//			~~~
-//		}
 		
 //		repository.insert(new Product("F0001","스콘",1500,new Date()));
 	}	
