@@ -25,7 +25,11 @@ class A{
 		if (getClass() != obj.getClass())
 			return false;
 		A other = (A) obj;
-		return i == other.i;
+		return i == other.i; //return this.hashCode() == other.hashCode();
+	}
+	@Override
+	public String toString() {
+		return "A [i=" + i + "]";
 	}
 }
 
@@ -34,8 +38,8 @@ public class CollectionTest {
 		c.add(new String("one")); //add()의 매개변수타입은 Object이다. String이 Object로 업캐스팅
 		c.add(new Integer(2)); //Integer가 Object로 업캐스팅
 		c.add(3); //AutoBoxing : 컴파일시에 c.add(new Integer(3));로 바뀜 Integer가 Object로 업캐스팅
-		c.add(2); //AutoBoxing
-//		c.add(new A(5));
+		c.add(2); //AutoBoxing //c.add(new Integer(2));
+		c.add(new A(5));
 		c.add(new A(5));
 		
 		System.out.println("자료수 : "+ c.size());
@@ -46,6 +50,8 @@ public class CollectionTest {
 		m.put(new Integer(2), "second");
 		m.put(3, "third");
 		m.put(2, "fourth");
+		m.put(new A(5), "fi");
+		m.put(new A(5), "si");
 		System.out.println("자료수:"+m.size());
 		System.out.println(m); //m.toString()자동호출됨 // {2=fourth, 3=third, one=first}
 	}
