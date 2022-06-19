@@ -2,16 +2,20 @@ package com.my.repository; //저장소
 
 import com.my.dto.Product;
 import com.my.exception.AddException;
-
-public class ProductRepository{
+/**
+ * 배열저장소
+ * @author writer
+ *
+ */
+public class ProductArrayRepository{
 	private Product[] products; //저장소 개수5
 	private int cnt; //저장소에 저장(등록)된 상품수0
 //	ProductRepository(String[] md){} //my
 	
-	public ProductRepository(){  
+	public ProductArrayRepository(){  
 		products=new Product[5];
 	}
-	public ProductRepository(int size){
+	public ProductArrayRepository(int size){
 		products=new Product[size];
 	}
 	/**
@@ -25,8 +29,8 @@ public class ProductRepository{
 //			products[cnt++] = product; //BAD ++연산자가 =와 같이쓰이면위험 cnt에 더하고 catch로 이동
 			System.out.println("상품종류개수: "+ cnt);
 		}catch(ArrayIndexOutOfBoundsException e) {
-			System.out.println("저장소가 꽉찼습니다. 현재 상품종류개수: "+cnt);
-			throw new AddException();
+			//System.out.println("저장소가 꽉찼습니다. 현재 상품종류개수: "+cnt);
+			throw new AddException("저장소가 꽉찼습니다. 현재 상품종류개수: "+cnt);
 		}
 	}
 	/**
