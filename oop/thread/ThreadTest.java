@@ -25,7 +25,7 @@ class Second implements Runnable{
 			System.out.println(Thread.currentThread().getName() +":현재시간="+formatStr);
 			
 			long millis = 1000L;
-			try {
+			try { //throws 안됨
 				Thread.sleep(millis);
 			} catch (InterruptedException e) {
 				e.printStackTrace(); //예외종류, 예외내용, 예외발생위치가 모두 출력됨
