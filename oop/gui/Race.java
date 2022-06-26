@@ -1,8 +1,9 @@
 package gui;
 
+import java.awt.Canvas;
 import java.awt.Container;
-import java.awt.FlowLayout;
 import java.awt.Graphics;
+import java.awt.GridLayout;
 import java.awt.Panel;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -47,7 +48,7 @@ import javax.swing.JTextField;
 //}
 
 //말 3마리가 달리기경주
-class Horse extends Canvas{
+class Horse extends Canvas implements Runnable{
 	String name;
 	int x = 10, y = 10;
 	Horse(String name){
@@ -55,9 +56,39 @@ class Horse extends Canvas{
 	}
 	@Override
 	public void paint(Graphics g) {
+//		System.out.println("canvas의 paint x=" + x);
 		g.drawString(name, x, y);
 	}
+//	@Override
+//	public void update(Graphics g) {
+//		for(int step=0; step<20; step++) {
+////			System.out.println("canvas의 update");
+//			x+=20;
+//			super.update(g); //clear-> paint()자동호출됨
+//			long millis = (long)(Math.random()*1000); //0<=r<1000
+//			try {
+//				Thread.sleep(millis);
+//			} catch (InterruptedException e) {
+//				e.printStackTrace();
+//			}
+//		}
+//	}
+	@Override
+	public void run() {
+//		this.repaint();
+		for(int step=0; step<20; step++) {
+			x+=20;
+			this.repaint();
+			long millis = (long)(Math.random()*1000); //0<=r<1000
+			try {
+				Thread.sleep(millis);
+			}catch(InterruptedException e) {
+				e.printStackTrace();
+			}
+		}
+	}
 }
+
 public class Race {
 	private JFrame jf;
 	private JButton btStart, btReady;
@@ -65,10 +96,20 @@ public class Race {
 	private Horse[] horses;
 	
 	class MyRunHandler implements ActionListener{
+
 		public void actionPerformed(ActionEvent e) {
 			jtf.setText("달립니다");
-			for(int step=0; step<20; step++)
-			horses[0].repaint();
+//			for(int step=0; step<20; step++) {
+//			horses[0].repaint();
+//			}
+//			horses[0].repaint();
+//			horses[1].repaint();
+//			horses[2].repaint();
+			
+			//스레드 시작
+			for(int i=0; i<horses.length; i++) {
+				new Thread(horses[i]).start();
+			}
 		}
 	}
 	
