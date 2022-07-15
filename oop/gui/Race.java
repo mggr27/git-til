@@ -144,10 +144,14 @@ public class Race {
 //		MyHandler myHandler = new MyHandler();
 //		btReady.addActionListener(myHandler);
 		btReady.addActionListener(
-				new ActionListener() {
+				new ActionListener() { //익명클래스
 					public void actionPerformed(ActionEvent e) {
 //						System.out.println("준비되었습니다");
 						jtf.setText("준비되었습니다");
+						for(Horse h: horses) {
+							h.x = 0;
+							h.repaint();
+						}
 					}
 				}
 		);
@@ -155,7 +159,7 @@ public class Race {
 		
 //		btReady.addActionListener(new ActionListener()); //인터페이스는 객체생성 못함
 //		btStart.addActionListener(
-//				new ActionListener() {
+//				new ActionListener() {//익명클래스
 //					public void actionPerformed(ActionEvent e) {
 ////						System.out.println("달립니다");
 //						jtf.setText("달립니다");
@@ -164,8 +168,10 @@ public class Race {
 //		);
 		btStart.addActionListener(
 //				new MyRunHandler(jtf)
-				new MyRunHandler()
+				new MyRunHandler() //이너클래스
 		);
+		
+		jf.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);	
 		
 		jf.setSize(500, 300);
 		jf.setVisible(true);
