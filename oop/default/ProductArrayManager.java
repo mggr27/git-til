@@ -38,7 +38,7 @@ public class ProductArrayManager {
 			for(int i=1; i<=10; i++) {
 			//try{
 				repository.insert(new Product("D000"+i,"상품"+i,1500,new Date()));
-				System.out.println("상품종류개수: "+repository.cnt);
+//				System.out.println("상품종류개수: "+repository.cnt);
 			//}catch(ArrayIndexOutOfBoundsException e) {
 			//	System.out.println("저장소가 꽉찼습니다");
 			//}
