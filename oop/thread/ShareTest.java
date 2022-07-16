@@ -7,6 +7,7 @@ class Share{
 	}
 	public void push() {
 		synchronized(this) {
+			notify();
 			System.out.print("before push:i=" + i);
 			i++;
 			System.out.println(", after push:i=" + i);
@@ -14,6 +15,13 @@ class Share{
 	}
 	public void pop() {
 		synchronized(this) {
+			if(i==0) {
+				try {
+					wait();
+				} catch (InterruptedException e) {
+					e.printStackTrace();
+				}
+			}
 			System.out.print("before pop:i=" + i);
 			i--;
 			System.out.println(", after pop:i=" + i);
@@ -51,8 +59,8 @@ public class ShareTest {
 //		Pop pop = new Pop();
 //		pop.s = s;
 		
-		push.start();
 		pop.start();
+		push.start();
 	}
 
 }
