@@ -7,7 +7,7 @@ import com.my.dto.Product;
 import com.my.exception.AddException;
 import com.my.exception.FindException;
 
-public class ProductListRepository {
+public class ProductListRepository implements ProductRepository {
 	private List<Product> products;
 	public ProductListRepository() {
 		products = new ArrayList<>(); //10개의 index가 기본제공
