@@ -34,9 +34,8 @@ public class ProductManagerConsole {
 	}
 	public void findAll() {
 		System.out.println(">>상품전체조회<<");
-		List<Product> all;
 		try {
-			all = repository.selectAll();
+			List<Product> all = repository.selectAll();
 			for(Product p: all) {
 				System.out.println(p);
 			}
