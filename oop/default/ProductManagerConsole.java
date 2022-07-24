@@ -11,7 +11,7 @@ public class ProductManagerConsole {
 	//TODO완성하세요
 	//ProductListRepository도 완성하세요
 	private static Scanner sc = new Scanner(System.in);
-	ProductListRepository repository;// = new ProductListRepository();
+	private ProductListRepository repository;// = new ProductListRepository();
 	ProductManagerConsole(){
 		repository = new ProductListRepository();
 	}
