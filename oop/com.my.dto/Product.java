@@ -1,13 +1,14 @@
 package com.my.dto; //DataTransferObject 자료전달객체
 
+import java.io.Serializable;
 import java.util.Date;
 import java.util.Objects;
 
-public class Product {
+public class Product implements Serializable{
 
 	private String prodNo;
 	private String prodName;
-	private int prodPrice;
+	transient private int prodPrice; //직렬화에서 제외
 	private String prodInfo;
 	private Date prodMfd;
 	
