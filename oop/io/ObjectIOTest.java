@@ -11,7 +11,7 @@ import java.util.Date;
 import java.util.Scanner;
 
 
-class A implements Serializable{
+class A implements Serializable{ //직렬화가능
 	int i;
 	A(int i){
 		this.i = i;
