@@ -10,6 +10,8 @@ import java.io.Serializable;
 import java.util.Date;
 import java.util.Scanner;
 
+import com.my.dto.Product;
+
 
 class A implements Serializable{ //직렬화가능
 	int i;
@@ -31,6 +33,9 @@ public class ObjectIOTest {
 			oos.writeObject(new Date());
 			A a = new A(7);
 			oos.writeObject(a);
+			
+			Product p = new Product("D0001", "아메리카노", 1000);
+			oos.writeObject(p);
 		} catch (FileNotFoundException e) {
 			e.printStackTrace();
 		} catch (IOException e) {
@@ -60,6 +65,11 @@ public class ObjectIOTest {
 			Object obj1 = ois.readObject();
 			A a = (A)obj1;
 			System.out.println(a.i);
+			
+//			Product p = (Product)ois.readObject();
+			Object obj2 = ois.readObject();
+//			System.out.println(p.toString());
+			System.out.println(obj2.toString());
 		} catch (FileNotFoundException e) {
 			e.printStackTrace();
 		} catch (IOException e) {
