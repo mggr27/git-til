@@ -4,16 +4,17 @@ import java.util.Scanner;
 import com.my.dto.Product;
 import com.my.exception.AddException;
 import com.my.exception.FindException;
-import com.my.exception.ModifyException;
-import com.my.repository.ProductListRepository;
+import com.my.repository.ProductFileRepository;
 
 public class ProductManagerConsole {
 	//TODO완성하세요
 	//ProductListRepository도 완성하세요
 	private static Scanner sc = new Scanner(System.in);
-	private ProductListRepository repository;// = new ProductListRepository();
+//	private ProductListRepository repository;// = new ProductListRepository();
+	private ProductFileRepository repository; 
 	ProductManagerConsole(){
-		repository = new ProductListRepository();
+//		repository = new ProductListRepository();
+		repository = new ProductFileRepository();
 	}
 	public void add() {
 		System.out.println(">>상품등록<<");
