@@ -11,12 +11,12 @@ public class TCPServerTest {
 	public static void main(String[] args) {
 		int port = 5432;
 		ServerSocket ss = null;
-		Socket s = null;
-		DataInputStream dis = null;
 		try {
 			//1. port열기
 			ss = new ServerSocket(port);
 			while(true) {
+				Socket s = null;
+				DataInputStream dis = null;
 				try {
 					//2. 클라이언트기다리기, 소켓생성
 					s = ss.accept();
@@ -30,6 +30,13 @@ public class TCPServerTest {
 				} catch(IOException e) {
 //					e.printStackTrace();
 				} finally {
+					if(s != null) {
+						try {
+							s.close();
+						}catch(IOException e) {
+							
+						}
+					}
 					System.out.println("클라이언트와 연결을 종료합니다");
 				}
 			}
