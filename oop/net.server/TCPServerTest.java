@@ -5,6 +5,7 @@ import java.io.IOException;
 import java.net.BindException;
 import java.net.ServerSocket;
 import java.net.Socket;
+import java.net.SocketException;
 
 public class TCPServerTest {
 	public static void main(String[] args) {
@@ -26,10 +27,15 @@ public class TCPServerTest {
 			
 //			receiveData = dis.readUTF();
 //			System.out.println("클라이언트가 보내준 내용:" + receiveData);
+			
 		} catch (BindException e) {
 			System.out.println(port+"포트가 이미 사용중입니다.");
+		} catch (SocketException e) {
+//			System.out.println("소켓이 끊겼습니다. 클라이언트장애인가 확인하세요");
 		} catch (IOException e) {
 			e.printStackTrace();
+		} finally {
+			System.out.println("클라이언트와 연결을 종료합니다");
 		}
 	}
 
