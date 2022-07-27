@@ -22,6 +22,8 @@ public class TCPServerTest {
 			String receiveData = null;
 			receiveData = dis.readUTF();
 			System.out.println("클라이언트가 보내준 내용:" + receiveData);
+//			receiveData = dis.readUTF();
+//			System.out.println("클라이언트가 보내준 내용:" + receiveData);
 		} catch (BindException e) {
 			System.out.println(port+"포트가 이미 사용중입니다.");
 		} catch (IOException e) {
