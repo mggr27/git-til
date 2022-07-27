@@ -17,8 +17,26 @@ public class TCPClientTest {
 		try {
 			s = new Socket(serverIP, serverPORT);
 			dos = new DataOutputStream(s.getOutputStream());
-			String sendData = sc.nextLine();
-			dos.writeUTF(sendData);
+			//1.for 2.while 3.do-while
+			String sendData = null;
+			
+//			while(!(sendData = sc.nextLine()).equals("quit")) {
+//				dos.writeUTF(sendData);
+//			}
+			
+//			while(true) {
+//				sendData = sc.nextLine();
+//				dos.writeUTF(sendData);
+//				if(sendData.equals("quit")) {
+//					break;
+//				}
+//			}
+			
+			do {
+				sendData = sc.nextLine();
+				dos.writeUTF(sendData);
+			}while(!sendData.equals("quit"));
+			
 //			String sendData = "Hello";
 //			dos.writeUTF(sendData);
 //			dos.writeUTF(sendData);
