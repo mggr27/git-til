@@ -4,7 +4,6 @@ import java.io.DataOutputStream;
 import java.io.IOException;
 import java.net.ConnectException;
 import java.net.Socket;
-import java.net.SocketException;
 import java.net.UnknownHostException;
 import java.util.Scanner;
 
@@ -14,12 +13,15 @@ public class TCPClientTest {
 		int serverPORT = 5432;
 		Socket s = null;
 		DataOutputStream dos = null;
+		Scanner sc = new Scanner(System.in);
 		try {
 			s = new Socket(serverIP, serverPORT);
 			dos = new DataOutputStream(s.getOutputStream());
-			String sendData = "Hello";
+			String sendData = sc.nextLine();
 			dos.writeUTF(sendData);
-			
+//			String sendData = "Hello";
+//			dos.writeUTF(sendData);
+//			dos.writeUTF(sendData);
 		} catch (UnknownHostException e) {
 //			e.printStackTrace();
 			System.out.println("IP가 잘못되었거나 호스트명이 잘못되었습니다");
