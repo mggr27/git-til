@@ -41,7 +41,7 @@ public class TCPServerTest {
 							
 						}
 					}
-					System.out.println(clientIP==null?"클라이언트":clientIP);
+					System.out.print(clientIP==null?"클라이언트":clientIP);
 					System.out.println("와 연결을 종료합니다");
 				}
 			} //end while(true)
