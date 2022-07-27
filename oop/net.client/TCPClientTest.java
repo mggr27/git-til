@@ -4,6 +4,7 @@ import java.io.DataOutputStream;
 import java.io.IOException;
 import java.net.ConnectException;
 import java.net.Socket;
+import java.net.SocketException;
 import java.net.UnknownHostException;
 import java.util.Scanner;
 
@@ -40,11 +41,14 @@ public class TCPClientTest {
 //			String sendData = "Hello";
 //			dos.writeUTF(sendData);
 //			dos.writeUTF(sendData);
+			
 		} catch (UnknownHostException e) {
 //			e.printStackTrace();
 			System.out.println("IP가 잘못되었거나 호스트명이 잘못되었습니다");
 		} catch(ConnectException e) {
 			System.out.println("서버와의 연결이 실패되었습니다");
+		} catch (SocketException se) {
+			System.out.println("소켓이 끊겼습니다. 서버장애인가 확인하세요");
 		} catch (IOException e) {
 			e.printStackTrace();
 		}
