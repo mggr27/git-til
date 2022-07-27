@@ -20,8 +20,10 @@ public class TCPServerTest {
 			s = ss.accept();
 			dis = new DataInputStream(s.getInputStream());
 			String receiveData = null;
-			receiveData = dis.readUTF();
-			System.out.println("클라이언트가 보내준 내용:" + receiveData);
+			while(!(receiveData = dis.readUTF()).equals("quit")) {
+				System.out.println("클라이언트가 보내준 내용:" + receiveData);
+			}
+			
 //			receiveData = dis.readUTF();
 //			System.out.println("클라이언트가 보내준 내용:" + receiveData);
 		} catch (BindException e) {
