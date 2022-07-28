@@ -19,6 +19,7 @@ class TCPEchoThread extends Thread{
 		clientIP = client.getHostAddress();
 		dis = new DataInputStream(s.getInputStream());
 		dos = new DataOutputStream(s.getOutputStream());
+		System.out.println(clientIP + "가 접속했습니다");
 	}
 	public void run() {
 		try {
