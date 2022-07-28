@@ -2,6 +2,7 @@ package net.client;
 
 import java.io.DataInputStream;
 import java.io.DataOutputStream;
+import java.io.EOFException;
 import java.io.IOException;
 import java.net.ConnectException;
 import java.net.Socket;
@@ -37,6 +38,7 @@ public class TCPEchoClientTest {
 			System.out.println("서버와의 연결이 실패되었습니다");
 		} catch(SocketException se) {
 			System.out.println("소켓이 끊겼습니다. 서버장애인가 확인하세요");
+		} catch(EOFException e) {
 		} catch (IOException e) {
 			e.printStackTrace();
 		} finally {
