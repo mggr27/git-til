@@ -23,28 +23,34 @@ class TCPBroadThread extends Thread{
 		clientIP = client.getHostAddress();
 		dis = new DataInputStream(s.getInputStream());
 		dos = new DataOutputStream(s.getOutputStream());
-		System.out.println(clientIP + "가 접속했습니다");
+		broadcast(clientIP + "가 접속했습니다");
+	}
+	public void broadcast(String msg) {
+		for(int i=0; i<list.size(); i++) {
+			TCPBroadThread t = list.get(i);
+			try {
+				t.dos.writeUTF(msg);
+			} catch (IOException e) {
+			}
+		}
 	}
 	public void run() {
 		try {
 			String receiveData = null;
 			while(!(receiveData = dis.readUTF()).equals("quit")) {
-				for(int i=0; i<list.size(); i++) {
-					TCPBroadThread t = list.get(i);
-					t.dos.writeUTF(receiveData);
-				}
+				broadcast(clientIP + ">" + receiveData);
 			}	
 		} catch(SocketException e) {
 		} catch(IOException e) {
 		} finally {
+			list.remove(this);
 			if(s != null) {
 				try {
 					s.close();
 				}catch(IOException e) {
 				}
 			}
-			System.out.print(clientIP==null?"클라이언트":clientIP);
-			System.out.println("와 연결을 종료합니다");
+			broadcast(clientIP + "와 연결을 종료합니다");
 		}
 	}
 }
