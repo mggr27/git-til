@@ -8,8 +8,8 @@ import java.net.InetAddress;
 import java.net.ServerSocket;
 import java.net.Socket;
 import java.net.SocketException;
-import java.util.ArrayList;
 import java.util.List;
+import java.util.Vector;
 class TCPBroadThread extends Thread{
 	private Socket s;
 	private DataInputStream dis = null;
@@ -63,7 +63,7 @@ public class TCPBroadServerTest {
 			//1. port열기
 			ss = new ServerSocket(port);
 			//List생성
-			List<TCPBroadThread> list = new ArrayList<>();
+			List<TCPBroadThread> list = new Vector<>();
 			while(true){
 				Socket s = null;
 				
@@ -73,6 +73,7 @@ public class TCPBroadServerTest {
 					
 					//새로운 스레드 생성 
 					TCPBroadThread t = new TCPBroadThread(s, list);
+					//리스트추가
 					list.add(t);
 					//스레드 시작
 					t.start();
